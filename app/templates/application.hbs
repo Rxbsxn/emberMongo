@@ -1,0 +1,5 @@
+{{outlet}}
+{{#each model as |item|}} 
+    <ol>{{item.author}}, article id: {{item.id}}</ol>
+    <li style="margin-left: 50px;">{{item.content}}</li>
+{{/each}}

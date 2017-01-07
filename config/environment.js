@@ -5,6 +5,9 @@ module.exports = function(environment) {
     modulePrefix: 'ember-mongo',
     environment: environment,
     rootURL: '/',
+    contentSecurityPolicy: {
+     'connect-src' : "'self' http://localhost:4500"
+    },
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -17,6 +20,9 @@ module.exports = function(environment) {
       }
     },
 
+
+
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -27,8 +33,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
+    
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    
   }
 
   if (environment === 'test') {
@@ -38,11 +46,12 @@ module.exports = function(environment) {
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
-
+    
     ENV.APP.rootElement = '#ember-testing';
-  }
+}
 
   if (environment === 'production') {
+
 
   }
 
